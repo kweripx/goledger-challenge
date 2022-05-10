@@ -48,6 +48,7 @@ type Car struct {
 	Model  string `json:"model"`
 	Colour string `json:"colour"`
 	Owner  string `json:"owner"`
+	Year 	 string `json:"year"`
 }
 
 /*
@@ -94,16 +95,18 @@ func (s *SmartContract) queryCar(APIstub shim.ChaincodeStubInterface, args []str
 
 func (s *SmartContract) initLedger(APIstub shim.ChaincodeStubInterface) sc.Response {
 	cars := []Car{
-		Car{Make: "Toyota", Model: "Prius", Colour: "blue", Owner: "Tomoko"},
-		Car{Make: "Ford", Model: "Mustang", Colour: "red", Owner: "Brad"},
-		Car{Make: "Hyundai", Model: "Tucson", Colour: "green", Owner: "Jin Soo"},
-		Car{Make: "Volkswagen", Model: "Passat", Colour: "yellow", Owner: "Max"},
-		Car{Make: "Tesla", Model: "S", Colour: "black", Owner: "Adriana"},
-		Car{Make: "Peugeot", Model: "205", Colour: "purple", Owner: "Michel"},
-		Car{Make: "Chery", Model: "S22L", Colour: "white", Owner: "Aarav"},
-		Car{Make: "Fiat", Model: "Punto", Colour: "violet", Owner: "Pari"},
-		Car{Make: "Tata", Model: "Nano", Colour: "indigo", Owner: "Valeria"},
-		Car{Make: "Holden", Model: "Barina", Colour: "brown", Owner: "Shotaro"},
+		Car{Make: "Toyota", Model: "Prius", Colour: "blue", Owner: "Tomoko", Year: "2017"},
+		Car{Make: "Ford", Model: "Mustang", Colour: "red", Owner: "Brad", Year: "2015"},
+		Car{Make: "Hyundai", Model: "Tucson", Colour: "green", Owner: "Jin Soo", Year: "2013"},
+		Car{Make: "Volkswagen", Model: "Passat", Colour: "yellow", Owner: "Max", Year: "2005"},
+		Car{Make: "Tesla", Model: "S", Colour: "black", Owner: "Adriana", Year: "2018"},
+		Car{Make: "Peugeot", Model: "205", Colour: "purple", Owner: "Michel", Year: "2006"},
+		Car{Make: "Chery", Model: "S22L", Colour: "white", Owner: "Aarav", Year: "2021"},
+		Car{Make: "Fiat", Model: "Punto", Colour: "violet", Owner: "Pari", Year: "2014"},
+		Car{Make: "Tata", Model: "Nano", Colour: "indigo", Owner: "Valeria", Year: "2008"},
+		Car{Make: "Holden", Model: "Barina", Colour: "brown", Owner: "Shotaro", Year: "2016"},
+		
+		
 	}
 
 	i := 0
